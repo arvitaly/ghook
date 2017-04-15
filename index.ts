@@ -28,8 +28,8 @@ export default class GHook {
     }
     public handler(request: express.Request, response: express.Response) {
         const payload = request.body;
-        response.send(
-            this.message(request.headers["x-github-event"] as any, request.headers["x-hub-signature"], payload));
+        this.message(request.headers["x-github-event"] as any, request.headers["x-hub-signature"], payload);
+        response.send({ status: "ok" });
         response.end();
     }
     public on(event: IListenerType, callback: IListenerCallback): GHook {

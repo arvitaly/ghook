@@ -23,7 +23,8 @@ class GHook {
     }
     handler(request, response) {
         const payload = request.body;
-        response.send(this.message(request.headers["x-github-event"], request.headers["x-hub-signature"], payload));
+        this.message(request.headers["x-github-event"], request.headers["x-hub-signature"], payload);
+        response.send({ status: "ok" });
         response.end();
     }
     on(event, callback) {
