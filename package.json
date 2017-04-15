@@ -1,6 +1,6 @@
 {
   "name": "ghook",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Github webhooks handler",
   "main": "index.js",
   "scripts": {
